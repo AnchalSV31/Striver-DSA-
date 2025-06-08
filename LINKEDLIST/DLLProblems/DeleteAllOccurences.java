@@ -19,6 +19,7 @@ public class DeleteAllOccurences {
         }
     }
 
+    //TC:O(N) SC:O(1)
     public static Node deleteAllOccurences(Node head, int key){
         Node temp=head;
         while(temp!=null){
