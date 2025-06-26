@@ -3,6 +3,7 @@ package Graph;
 import java.util.*;
 
 class Solution {
+    //TC:O(N)+ O(V+2E)   SC:O(N)+O(N)
     // dfs traversal function 
     private static void dfs(int node, ArrayList<ArrayList<Integer>> adjLs , int vis[]) {
         vis[node] = 1; 

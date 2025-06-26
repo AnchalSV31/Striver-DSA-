@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class NoOfIslands {
+    //TC: O(N2) SC: O(N2)+O(N2)
     private void bfs(int ro, int co, int[][] vis, char[][] grid){
         vis[ro][co]=1;
         Queue<Pair> q = new LinkedList<Pair>();
