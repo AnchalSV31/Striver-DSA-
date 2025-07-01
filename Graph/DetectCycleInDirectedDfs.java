@@ -3,6 +3,7 @@ package Graph;
 import java.util.*;
 
 class DetectCycleInDirectedDfs {
+    //TC: O(V+E)+O(V) SC:O(2N)
     private boolean dfsCheck(int node, ArrayList<ArrayList<Integer>> adj, int vis[], int pathVis[]) {
         vis[node] = 1; 
         pathVis[node] = 1; 

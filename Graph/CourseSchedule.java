@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Queue;
 
 public class CourseSchedule {
-    //COURSE SCHEDULE
+    //COURSE SCHEDULE: 
+    //returns the topological sort[linear ordering] of the given pre requisites if possible otherwise return an empty array
+    
     static int[] findOrder(int n, int m, ArrayList<ArrayList<Integer>> prerequisites) {
         // Form a graph
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
@@ -60,7 +62,9 @@ public class CourseSchedule {
     }
 
 
-    //PRE REQUISITES TASK
+    //PRE REQUISITES TASK:
+    //return "yes" if it is possible to perform all tasks in linear order[topo sort/ if graph contains cycle] otherwise returns "no" 
+
     public static boolean isPossible(int V, int[][] prerequisites) {
             // Form a graph
             ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
@@ -110,46 +114,46 @@ public class CourseSchedule {
     
     
         public static void main(String[] args) {
-            // int N = 4;
-            // int M = 3;
-            // ArrayList<ArrayList<Integer>> prerequisites = new ArrayList<>();
-            // for (int i = 0; i < N; i++) {
-            //     prerequisites.add(i, new ArrayList<>());
-            // }
-    
-    
-            // prerequisites.get(0).add(0);
-            // prerequisites.get(0).add(1);
-    
-            // prerequisites.get(1).add(1);
-            // prerequisites.get(1).add(2);
-    
-            // prerequisites.get(2).add(2);
-            // prerequisites.get(2).add(3);
-    
-            // int[] ans1 = CourseSchedule.findOrder(N, M, prerequisites);
-            // for (int task : ans1) {
-            //     System.out.print(task + " ");
-            // }
-            // System.out.println("");
-    
-    
-    
             int N = 4;
-            int[][] prerequisites = new int[3][2];
-            prerequisites[0][0] = 1;
-            prerequisites[0][1] = 0;
+            int M = 3;
+            ArrayList<ArrayList<Integer>> prerequisites = new ArrayList<>();
+            for (int i = 0; i < N; i++) {
+                prerequisites.add(i, new ArrayList<>());
+            }
     
-            prerequisites[1][0] = 2;
-            prerequisites[1][1] = 1;
     
-            prerequisites[2][0] = 3;
-            prerequisites[2][1] = 2;
+            prerequisites.get(0).add(0);
+            prerequisites.get(0).add(1);
     
-            boolean ans2 = CourseSchedule.isPossible(N, prerequisites);
-        if (ans2)
-            System.out.println("YES");
-        else
-            System.out.println("NO");
+            prerequisites.get(1).add(1);
+            prerequisites.get(1).add(2);
+    
+            prerequisites.get(2).add(2);
+            prerequisites.get(2).add(3);
+    
+            int[] ans1 = CourseSchedule.findOrder(N, M, prerequisites);
+            for (int task : ans1) {
+                System.out.print(task + " ");
+            }
+            System.out.println("");
+    
+    
+    
+        //     int N = 4;
+        //     int[][] prerequisites = new int[3][2];
+        //     prerequisites[0][0] = 1;
+        //     prerequisites[0][1] = 0;
+    
+        //     prerequisites[1][0] = 2;
+        //     prerequisites[1][1] = 1;
+    
+        //     prerequisites[2][0] = 3;
+        //     prerequisites[2][1] = 2;
+    
+        //     boolean ans2 = CourseSchedule.isPossible(N, prerequisites);
+        // if (ans2)
+        //     System.out.println("YES");
+        // else
+        //     System.out.println("NO");
     }
 }
