@@ -2,6 +2,7 @@ package Graph;
 import java.util.*;
 
 public class PathWithMinEffort {
+    //TC:O(4*N*M * log(N*M)) SC:O(N*M) 
     static class Tuple{
         int dist, row, col;
         Tuple(int dist, int row, int col){
