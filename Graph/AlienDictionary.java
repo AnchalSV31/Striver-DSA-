@@ -9,17 +9,27 @@ public class AlienDictionary {
         adj.add(new ArrayList<>());
     }
 
-    for(int i=0; i<n-1; i++){
-        String s1= dict[i];
-        String s2= dict[i+1];
-        int len= Math.min(s1.length(), s2.length());
-        for(int ptr=0; ptr<len; ptr++){
-            if(s1.charAt(ptr)!=s2.charAt(ptr)){
-                adj.get(s1.charAt(ptr)-'a').add(s2.charAt(ptr)-'a');  //to convert lowercase char in the form of 0,1,2...
+    // Step 2: Build graph (edges based on lexicographic order)
+    for (int i = 0; i < n - 1; i++) {
+        String s1 = dict[i];
+        String s2 = dict[i + 1];
+        int len = Math.min(s1.length(), s2.length());
+        boolean foundDiff = false;
+
+        for (int ptr = 0; ptr < len; ptr++) {
+            if (s1.charAt(ptr) != s2.charAt(ptr)) {
+                adj.get(s1.charAt(ptr) - 'a').add(s2.charAt(ptr) - 'a');
+                foundDiff = true;
                 break;
             }
         }
+
+        // Handle edge case where s1 is longer and s2 is a prefix
+        if (!foundDiff && s1.length() > s2.length()) {
+            return "";
+        }
     }
+
     List<Integer> topo= topoSort(k, adj);
     String ans= "";
     for(int it: topo){

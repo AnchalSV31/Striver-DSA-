@@ -20,15 +20,12 @@ public class CourseSchedule {
             adj.get(prerequisites.get(i).get(1)).add(prerequisites.get(i).get(0));
         }
 
-
-
         int indegree[] = new int[n];
         for (int i = 0; i < n; i++) {
             for (int it : adj.get(i)) {
                 indegree[it]++;
             }
         }
-
 
         Queue<Integer> q = new LinkedList<Integer>();
         for (int i = 0; i < n; i++) {
