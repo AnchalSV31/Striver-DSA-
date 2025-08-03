@@ -1,5 +1,6 @@
 package Graph;
 class FloydWarshall {
+    //TC: O(V^3) SC: O(V^2)
     public void shortest_distance(int[][] matrix) {
         int n = matrix.length;
         for (int i = 0; i < n; i++) {

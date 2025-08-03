@@ -1,10 +1,9 @@
 package Graph;
-import java.util.*;
 
-//Number of Operations to Make Network Connected - DSU
+import java.util.ArrayList;
+import java.util.List;
 
-//TC: O(E*4α)+O(N*4α) SC:O(2N)
-class DisjointSet {
+public class DisjointSet {
     List<Integer> rank = new ArrayList<>();
     List<Integer> parent = new ArrayList<>();
     List<Integer> size = new ArrayList<>();
@@ -52,46 +51,26 @@ class DisjointSet {
             size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));
         }
     }
-}
-class NumberOfOperations {
 
-    public int Solve(int n, int[][] edge) {
-        DisjointSet ds = new DisjointSet(n);
-        int cntExtras = 0;
-        int m = edge.length;
-        for (int i = 0; i < m ; i++) {
-            int u = edge[i][0];
-            int v = edge[i][1];
-
-             //if u and v have same ultimate parent, increase count extra
-             //same ultimate parent means nodes are already connected and hence we can consider current edge as extra edge
-            if (ds.findUPar(u) == ds.findUPar(v)) {   
-                cntExtras++;
-            } else {
-                ds.unionBySize(u, v);
-            }
-        }
-
-        int cntC = 0;
-        for (int i = 0; i < n; i++) {
-            //if node is ultimate parent of itself
-            if (ds.parent.get(i) == i) cntC++;    //number of ultimate parents
-        }
-        int ans = cntC - 1;                       //numbers to connections to be made to make network connected
-        if (cntExtras >= ans) return ans;
-        return -1;
-    }
-}
-
-
-class Main {
     public static void main (String[] args) {
-        int V = 9;
-        int[][] edge = {{0, 1}, {0, 2}, {0, 3}, {1, 2}, {2, 3}, {4, 5}, {5, 6}, {7, 8}};
+        DisjointSet ds = new DisjointSet(7);
+        ds.unionByRank(1, 2);
+        ds.unionByRank(2, 3);
+        ds.unionByRank(4, 5);
+        ds.unionByRank(6, 7);
+        ds.unionByRank(5, 6);
 
-        NumberOfOperations obj = new NumberOfOperations();
-        int ans = obj.Solve(V, edge);
-        System.out.println("The number of operations needed: " + ans);
+        // if 3 and 7 same or not
+        if (ds.findUPar(3) == ds.findUPar(7)) {
+            System.out.println("Same");
+        } else
+            System.out.println("Not Same");
 
+        ds.unionByRank(3, 7);
+        // ds.unionBySize(3, 7);
+        if (ds.findUPar(3) == ds.findUPar(7)) {
+            System.out.println("Same");
+        } else
+            System.out.println("Not Same");
     }
 }

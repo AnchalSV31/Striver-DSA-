@@ -2,7 +2,7 @@ package Graph;
 
 import java.util.*;
 
-class Solution {
+class NumOfProvincesDFS {
     //TC:O(N)+ O(V+2E)   SC:O(N)+O(N)
     // dfs traversal function 
     private static void dfs(int node, ArrayList<ArrayList<Integer>> adjLs , int vis[]) {
@@ -59,6 +59,6 @@ class Solution {
         adj.get(2).add(1, 0);
         adj.get(2).add(2, 1);
                 
-        System.out.println(Solution.numProvinces(adj,3));
+        System.out.println(numProvinces(adj,3));
     }
 };
