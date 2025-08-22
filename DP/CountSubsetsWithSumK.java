@@ -1,7 +1,7 @@
 package DP;
 import java.util.*;
 
-public class CountSubsetsWithSumsum {
+public class CountSubsetsWithSumK {
     //Memoization TC:O(N*sum) SC:O(N*sum) + O(N)
     public static int findWaysUtil(int ind, int target, int[] arr, int [][] dp){
         if(target==0) return 1;
