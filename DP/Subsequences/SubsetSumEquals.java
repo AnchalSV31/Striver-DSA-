@@ -1,4 +1,4 @@
-package DP;
+package DP.Subsequences;
 
 import java.util.Arrays;
 

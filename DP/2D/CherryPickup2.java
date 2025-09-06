@@ -1,7 +1,7 @@
 package DP;
 import java.util.*;
 
-//3D DP
+//3D DP - Ninja and his Friends
 public class CherryPickup2 {
     //MEMOIZATION TC:0(N*M*M)*9 SC: O(N*M*M)+O(N)
     public static int maxChoco(int n, int m, int[][] grid){
