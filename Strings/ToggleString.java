@@ -1,6 +1,6 @@
 package Strings;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class ToggleString {
     public static void main(String[] args) {
