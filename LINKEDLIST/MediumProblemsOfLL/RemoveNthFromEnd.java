@@ -1,4 +1,4 @@
-package LINKEDLIST.MediumProblemsOfLL;
+package MediumProblemsOfLL;
 
 class Node {
     public int data;
@@ -22,6 +22,7 @@ public class RemoveNthFromEnd {
     }
 
     //Brute Force
+    //TC:O(L)+O(L-N) SC:O(1)
     public static Node DeleteNthNodefromEnd(Node head, int N) {
         if (head == null) {
             return null;
@@ -62,6 +63,7 @@ public class RemoveNthFromEnd {
 
     
     //Optimal Approach
+    //TC:O(N) SC:O(1)
     public static Node DeleteNthNodefromEnd2(Node head, int N) {
         Node fastp = head;
         Node slowp = head;
