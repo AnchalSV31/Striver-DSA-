@@ -2,6 +2,7 @@ package Greedy;
 import java.util.*;
 
 public interface InsertInterval {
+    //TC:O(N) SC:O(N)
     public static int[][] insert(int[][] intervals, int[] newInterval) {
         int n=intervals.length;
         int i=0;

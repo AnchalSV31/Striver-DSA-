@@ -1,4 +1,4 @@
-package LINKEDLIST.MediumProblemsOfLL;
+package MediumProblemsOfLL;
 
 import java.util.Stack;
 
