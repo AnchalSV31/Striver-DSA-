@@ -2,6 +2,7 @@ package StackNQueue;
 
 import java.util.Stack;
 
+//NGE IN CIRCULAR ARRAY
 public class NextGreaterElementUsingStack {
     public static int[] nextGreaterElements(int[] nums) {
         int n = nums.length;

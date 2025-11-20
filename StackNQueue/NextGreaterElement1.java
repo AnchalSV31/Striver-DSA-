@@ -30,7 +30,6 @@ public class NextGreaterElement1 {
         
         public static void main(String args[]) {
             int arr1[]={4,1,2};
-    
             int arr2[] = {1,3,4,2};
             int arr3[] = nextGreaterElement(arr1, arr2);
         
