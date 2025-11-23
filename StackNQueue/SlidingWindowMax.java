@@ -26,9 +26,11 @@ public class SlidingWindowMax {
         int listi=0;
         Deque<Integer> dq = new ArrayDeque<>();
         for(int i=0; i<n; i++){
+            // remove numbers out of range k
             if(!dq.isEmpty() && dq.peek()==i-k){
                 dq.poll();
             }
+            // remove smaller numbers in k range as they are useless
             while(!dq.isEmpty() && nums[dq.peekLast()]<nums[i]){
                 dq.pollLast();
             }

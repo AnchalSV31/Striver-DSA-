@@ -2,20 +2,21 @@ package StackNQueue;
 
 import java.util.Stack;
 
+//previous smaller equal element
 public class PreviousSmallerElement {
     public static int[] previousSmallerElement(int[] nums) {
         int n = nums.length;
-        int nse[] = new int[n];
+        int pse[] = new int[n];
         Stack < Integer > st = new Stack < > ();
         for (int i = 0; i <=n-1; i++) {
             while (st.isEmpty() == false && st.peek() >= nums[i]) {
                 st.pop();
             }
 
-            nse[i]=st.isEmpty() ? -1 : st.peek();
+            pse[i]=st.isEmpty() ? -1 : st.peek();
             st.push(nums[i]);
         }
-        return nse;
+        return pse;
     }
     public static void main(String args[]) {
         //int arr[]={4,5,2,10,8};
