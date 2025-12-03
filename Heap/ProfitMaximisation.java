@@ -27,11 +27,11 @@ public class ProfitMaximisation {
     }
 
     public static void main(String[] args) {
-        // int[]A = {2, 3};
-        // int B = 3;
+        int[]A = {2, 3};
+        int B = 3;
 
-        int[] A = {1, 4};
-        int B = 2;
+        // int[] A = {1, 4};
+        // int B = 2;
 
         System.out.println(solve(A, B));
     }
