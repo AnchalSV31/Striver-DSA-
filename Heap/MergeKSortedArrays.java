@@ -36,7 +36,9 @@ public class MergeKSortedArrays {
 
             int nextIdx= pair.elementIndex +1;
 
+            //Check if nextIndex is inside bounds
             if(nextIdx < mat[pair.arrayIndex].length){
+                //Push the next element of the same array
                 pq.add(new Pair(mat[pair.arrayIndex][nextIdx], pair.arrayIndex, nextIdx));
             }
         }

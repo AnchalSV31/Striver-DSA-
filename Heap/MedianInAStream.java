@@ -62,7 +62,8 @@ public class MedianInAStream {
     }
 
     public static void main(String[] args) {
-        int arr[] = {5, 15, 1, 3, 2, 8};
+        // int arr[] = {5, 15, 1, 3, 2, 8};
+        int arr[]={7,11,4,9,15,2,1,18}; 
         System.out.println(medianInStream(arr));
     }
 }
